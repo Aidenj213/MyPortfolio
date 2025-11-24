@@ -158,8 +158,60 @@ video {
     box-shadow: 0 2px 8px rgba(0,0,0,0.10);
     object-fit: contain;
     background: #fff;
+    cursor: pointer;
+    transition: transform .15s ease;
+}
+
+.photo-box img:hover {
+    transform: scale(1.02);
 }
 
 .projects {
     text-align: center;
 }
+
+/* Lightbox styles */
+.lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  padding: 2rem;
+}
+.lightbox[aria-hidden="false"] { display: flex; }
+.lightbox-content {
+  max-width: 95%;
+  max-height: 95%;
+  text-align: center;
+  color: #fff;
+}
+.lightbox-img {
+  max-width: 100%;
+  max-height: 80vh;
+  margin-bottom: .75rem;
+  box-shadow: 0 10px 30px rgba(0,0,0,.6);
+  border-radius: 4px;
+}
+.lightbox-caption {
+  margin: 0;
+  font-size: 1rem;
+  opacity: .95;
+}
+
+/* Close button */
+.lightbox-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 2rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: .25rem .5rem;
+}
+.lightbox-close:focus { outline: 2px solid #fff; border-radius: 4px; }
